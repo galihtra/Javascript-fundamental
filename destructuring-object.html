@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Destructuring digunakan untuk membongkar value-value di object ke dalam variable-variable
+
+        {
+            const name = {
+                firstName: "Galih",
+                lastName: "tra",
+                age: 18,
+                address: {
+                    region: "Kota Batam",
+                    province: "Kepulauan Riau"
+                },
+                funFact: "Psikopat",
+                hobby: "ngemil batu bata"
+            }   
+
+            const {firstName, lastName, age, address: {region, province}, ...others} = name;
+            console.info(firstName);
+            console.info(lastName);
+            console.info(age);
+            console.info(region);
+            console.info(province);
+            console.info(others);
+        }
+
+        // Mengeluarkan value tanpa Destructuring
+        {
+            const name = {
+                firstName: "Galih",
+                lastName: "tra",
+                age: 18
+            }   
+
+            const firstName = name.firstName
+            const lastName = name.lastName
+            const age = name.age
+            console.info(firstName,lastName,age);
+        }
+
+        // menggunakan penamaan variabel lokal yang berbeda / mengganti nama variabel
+        {
+            const name = {
+                firstName: "Galih",
+                lastName: "tra",
+                age: 18
+            }   
+
+            const {firstName: namaDepan, lastName: namaAkhir, age: umur} = name;
+            console.info(namaDepan,namaAkhir,umur);
+        }
+    </script>
+</body>
+</html>

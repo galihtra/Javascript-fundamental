@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            const myFavorites = ["Burger","Chicken Fillet", "Hamburger", "Noodle", "Pizza"];
+            const [firstFood, secondFood,thirdFood] = myFavorites;
+
+            console.log(firstFood);
+            console.log(secondFood);
+            console.log(thirdFood);
+        }
+        
+        // Memilih Index
+        {
+            const myFavorites = ["Burger","Chicken Fillet", "Hamburger", "Noodle", "Pizza"];
+            const [, ,thirdFood, ...others] = myFavorites;
+
+            console.log(thirdFood);
+            console.log(others);
+        }
+
+        // Default Value
+        {
+            const anime = ["Naruto"];
+            const [one,two = "One Piece"] = anime;
+
+            console.log(one);
+            console.log(two);
+        }
+    </script>
+</body>
+</html>
