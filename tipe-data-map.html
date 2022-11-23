@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Mirip dengan object namun key bisa tipe data apapun
+        const myMap = new Map([
+            ['1', "a key string "],
+            [1, "a key number "],
+            [true, true] 
+        ]);
+
+        console.info(myMap);
+
+        const capital = new Map([
+            ["Jakarta", "Indonesia"],
+            ["Thailand", "Bangkok"],
+            ["Malaysia", "Kualu Lumpur"]
+        ]); 
+
+        console.info(capital.size);
+        console.info(capital.get("Thailand"));
+        capital.set("England", "London");
+        console.info(capital.size);
+        console.info(capital.get("England"));
+        console.info(capital.delete("England"));
+        console.info(capital.size); 
+    </script>
+</body>
+</html>
