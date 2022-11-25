@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function return value
+      function divided(a, b) {
+        result = a / b;
+        return result;
+      }
+
+      console.info(divided(10, 2));
+
+      // Function Return Value Lebih Dari Satu
+      function resultExam(exam) {
+        if (exam >= 90) {
+          return "Selamat nilai anda A";
+        }
+        if (exam >= 75) {
+          return "Bagus nilai anda B";
+        } else {
+          return "Nilai anda C";
+        }
+      }
+      console.info(resultExam(75));
+
+      // Menghentikan Eksekusi dengan Return
+      function isGet(array, get) {
+        for (const element of array) {
+          if (element === get) {
+            return true;
+          }
+        }
+        return false;
+      }
+      const name = ["Galih", "eko"];
+      const search = "Galih";
+      console.info(isGet(name, search));
+    </script>
+  </body>
+</html>
