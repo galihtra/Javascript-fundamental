@@ -12,9 +12,42 @@
             document.writeln(`<p>Hi, Hello ${name} your ${age}</p>`)
         }
 
-        sayHello("Galih",13);
-        sayHello(true, 19);
-        sayHello(12, 13);
+        sayHello("Galih",19);
+
+        // destructuring object di function
+        {
+            const fruits = {
+            first : "Banana",
+            second : "Watermelon",
+            third : "Mango"
+            };
+
+            function nameFruits({first,second}) {
+            document.writeln(`<p>${first} and ${second}</p>`)
+            }
+            nameFruits(fruits);
+        }
+
+        // Default Parameter
+        function register(nim, gender = "UNKNOWN") {
+            document.writeln(`<p>${nim} and ${gender}</p>`)
+        }
+        register(4342201010)
+
+
+        // Rest Parameter
+        function sum(brands,...data) {
+            let result = 0
+            for (const number of data) {
+                result += number;
+            }
+            return document.writeln(`<p>${brands} tersedia tipe: ${data}</p>`)
+        }
+
+        sum("Samsung", "S10", "Galaxy A18", "Tab 9")
+        // Menggunakan Spread Paramater
+        const iphone = ["Iphone XS", "Iphone 14", "Iphone XR"]
+        sum("Apple", ...iphone)
     </script>
 </body>
 </html>
