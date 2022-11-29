@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello = function (name) {
+                console.log(`Hello ${name}, I am ${this.firstName}`);
+            }        
+        }
+
+        Person.prototype.sayBye = function () {
+            console.log("Bye ");
+        }
+
+        const galih = new Person("Galih", "Tra");
+        const eko = new Person("Eko", "Vahto");
+        console.log(galih);
+        console.log(eko);
+        eko.sayBye();
+    </script>
+</body>
+</html>
