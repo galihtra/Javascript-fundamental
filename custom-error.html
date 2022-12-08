@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Tanpa Custom
+        {
+            let json = '{ "name": "Galih" }';
+
+            try {
+                let user = JSON.parse(json);
+
+                if (!user.name) {
+                    throw new SyntaxError("'name' is required.");
+                }
+                if (!user.age) {
+                    throw new SyntaxError("'age' is required.");
+                }
+
+                console.log(user.name);
+                console.log(user.age);
+            } catch (error) {
+                if (error instanceof SyntaxError) {
+                    console.log(`JSON Error: ${error.message}`);
+                } else if (error instanceof ReferenceError) {
+                    console.log(error.message);
+                } else {
+                    console.log(error.stack);
+                }
+            }
+        }
+
+
+        class ValidationError extends Error {
+            constructor(message, field) {
+                super(message);
+                this.field = field;
+            }
+        }
+
+        let json = '{ "age": 20 }';
+
+        try {
+            let user = JSON.parse(json);
+
+            if (!user.name) {
+                throw new ValidationError("Name is required", "name");
+            }
+
+            if (!user.age) {
+                throw new ValidationError("Age is require","age");
+            }
+
+            console.log(user.name); // undefined
+            console.log(user.age);  // 20
+
+        } catch (error) {
+            if (error instanceof SyntaxError) {
+                console.log(`Json Syntax Error: ${error.message}`);
+            } else if (error instanceof ValidationError) {
+                console.log(`Terjadi error di field ${error.field} Dengan Error: ${error.message}`);
+            } else if (error instanceof ReferenceError) {
+                console.error(error.message);
+            } else {
+                console.error(error.stack);
+            }
+
+        }
+    </script>
+</body>
+
+</html>
